@@ -18,3 +18,11 @@ h1, h2, h3, .description {
   border-radius: 0.25rem;
   margin-top: 25px;
 }
+.dropdown-menu {
+	color: #495057 !important;
+  background-color: #e9ecef !important;
+  border-color: #dee2e6 !important;
+  border-radius: 0.25rem;
+	margin-top: 25px;
+	min-width: 9.5rem !important;
+}
