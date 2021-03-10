@@ -1,12 +1,10 @@
-#header {
-  margin-top: 20px;
-}
 h1, h2, h3, .description {
   text-align: center;
   margin-bottom: 15px;
 }
 #titleGraph {
-  text-align: -webkit-center; 
+	text-align: -webkit-center; 
+	margin-top: 20px;
 }
 #graph {
   margin-top: 25px;
@@ -24,5 +22,5 @@ h1, h2, h3, .description {
   border-color: #dee2e6 !important;
   border-radius: 0.25rem;
 	margin-top: 25px;
-	min-width: 9.5rem !important;
+	min-width: 5rem !important;
 }

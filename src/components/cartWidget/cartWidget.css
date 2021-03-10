@@ -1,0 +1,10 @@
+#cart {
+	text-decoration: none;
+	color: #000000;
+	font-size: 30px;
+	padding-left: 60px;
+}
+#cart:hover {
+	text-decoration: none;
+	color: inherit;
+}
