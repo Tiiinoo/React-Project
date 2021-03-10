@@ -15,7 +15,7 @@ function App() {
         <NavBar />
       </header>
 			<main className="App-main">
-				<ItemListContainer />
+				<ItemListContainer greeting="cryptoUser" />
 			</main>
     </div>
   );

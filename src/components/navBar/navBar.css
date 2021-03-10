@@ -4,23 +4,23 @@ h1, h2, h3, .description {
 }
 #titleGraph {
 	text-align: -webkit-center; 
-	margin-top: 20px;
+	margin-top: 15px;
 }
 #graph {
-  margin-top: 25px;
+  margin-top: 15px;
 }
 #mainNav {
   color: #495057 !important;
   background-color: #e9ecef !important;
   border-color: #dee2e6 !important;
   border-radius: 0.25rem;
-  margin-top: 25px;
+  margin-top: 15px;
 }
 .dropdown-menu {
 	color: #495057 !important;
   background-color: #e9ecef !important;
   border-color: #dee2e6 !important;
   border-radius: 0.25rem;
-	margin-top: 25px;
+	margin-top: 15px;
 	min-width: 5rem !important;
 }
