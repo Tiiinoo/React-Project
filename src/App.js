@@ -2,8 +2,7 @@ import './App.css';
 import { NavBar } from './components/navBar/navBar';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import "bootstrap/dist/css/bootstrap.min.css";
-import "jquery/dist/jquery.min.js";
-import "./icomoon/style.css"
+import "./icomoon/style.css";
 import { ItemListContainer } from './components/itemListContainer/itemListContainer';
 
 
