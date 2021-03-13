@@ -6,7 +6,7 @@
 	font-size: 1.3rem;
 	margin-top: 15px;
 }
-#itemSelected, #stock {
+#itemSelected, #stock, #yourChart {
 	text-align: center;
 }
 #items {

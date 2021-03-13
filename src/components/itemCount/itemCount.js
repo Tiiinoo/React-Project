@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import './itemCount.css'
 
-export const ItemCount = () => {
-	const [items, setItems] = useState(0)
-	const [stock, setStock] = useState(5)
+export const ItemCount = ({initial, quantity }) => {
+	const [items, setItems] = useState(initial)
+	const [stock, setStock] = useState(quantity)
 	const addItem = () => {
-		setItems(items +1)
+		setItems(parseInt(items) +1)
 	}
 	const removeItem = () => {
-		setItems(items -1)
+		setItems(parseInt(items) -1)
 	}
 	const modifyStock = () => {
 		setStock(stock - items)
-		setItems(0)
+		setItems(parseInt(initial))
 	}
+	
 	return (
 		<div id="itemCountContainer" className="container">
 			<div className="row"> 
@@ -23,12 +24,12 @@ export const ItemCount = () => {
 					<p id="stock">Stock {stock}</p>
 				</div>
 				<div className="col-lg-2 offset-lg-5 d-flex justify-content-between">	
-					<input id="removing" className="btn btn-outline-success" type="button" value="-" onClick={removeItem} />
+					<input id="removing" className="btn btn-outline-success" type="button" value="-" onClick={removeItem} disabled={items == 0} />
 					<p id="items">{items}</p>
-					<input id="adding" className="btn btn-outline-success" type="button" value="+" onClick={addItem} />
+					<input id="adding" className="btn btn-outline-success" type="button" value="+" onClick={addItem} disabled={items == stock} />
 				</div>		
 				<div className="col-lg-2 offset-lg-5">
-					<input id="addToChart" className="btn btn-success" type="button" value="Add to chart" onClick={modifyStock} />
+					<input id="addToChart" className="btn btn-success" type="button" value="Add to chart" onClick={modifyStock} disabled={stock == 0} />
 				</div>	
 			</div>
 		</div>
