@@ -4,6 +4,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./icomoon/style.css";
 import { ItemListContainer } from './components/itemListContainer/itemListContainer';
+import { ItemCount } from './components/itemCount/itemCount';
 
 
 
@@ -14,7 +15,8 @@ function App() {
         <NavBar />
       </header>
 			<main className="App-main">
-				<ItemListContainer greeting="cryptoUser" />
+				<ItemListContainer greeting="cyptoUser" />
+				<ItemCount />
 			</main>
     </div>
   );

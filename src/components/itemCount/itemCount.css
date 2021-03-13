@@ -1,0 +1,18 @@
+#itemCountContainer{
+	margin-top: 10px;
+}
+#select {
+	text-align: center;
+	font-size: 1.3rem;
+	margin-top: 15px;
+}
+#itemSelected, #stock {
+	text-align: center;
+}
+#items {
+	margin: 5px 0px !important;
+}
+#addToChart {
+	width: 100%;
+	margin-top: 15px;
+}
