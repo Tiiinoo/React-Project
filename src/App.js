@@ -17,7 +17,6 @@ function App() {
 			<main className="App-main">
 				<ItemListContainer greeting="cyptoUser" />
 				<ItemCount initial="0" quantity="5" />
-				<ItemCount initial="0" quantity="10" />
 			</main>
     </div>
   );

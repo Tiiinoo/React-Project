@@ -1,14 +1,16 @@
 import React from 'react'
+import './item.css'
 
-export const Item = ({ item }) => {
+export const Item = ({ items }) => {
 	return (
-		<div class="card">
-			<img class="card-img-top" src={item.image} alt="Card image cap" />
-			<div class="card-body">
-				<h4 class="card-title">{item.name}</h4>
-				<p class="card-text">{item.description}
+		<div className="card">
+			<img className="card-img-top" src={items.image} alt="Card image cap" />
+			<div className="card-body">
+				<h4 className="card-title">{items.name}</h4>
+				<h5 className="card-title">${items.price}</h5>
+				<p className="card-text">{items.description}
 				</p>
-				<a href="#!" class="btn btn-outline-success">More information</a>
+				<a href="#!" className="btn btn-outline-success">More information</a>
 			</div>
 		</div>
 	);
