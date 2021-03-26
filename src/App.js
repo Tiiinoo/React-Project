@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./icomoon/style.css";
 import { ItemListContainer } from './components/itemListContainer/itemListContainer';
 import { ItemCount } from './components/itemCount/itemCount';
+import ItemDetailContainer from './components/itemDetailContainer/itemDetailContainer';
 
 
 
@@ -17,6 +18,7 @@ function App() {
 			<main className="App-main">
 				<ItemListContainer greeting="cyptoUser" />
 				<ItemCount initial="0" quantity="5" />
+				<ItemDetailContainer />
 			</main>
     </div>
   );
