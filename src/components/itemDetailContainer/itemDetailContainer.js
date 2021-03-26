@@ -21,13 +21,13 @@ export default function ItemDetailContainer() {
 	}, [])
 	
 	return (
-		<div className="container">	
-			<div className="row justify-content-center">
-			<h3>Indumentary section</h3>
-			</div>
-			<div className="row justify-content-center">
-				<ItemDetail item={ item } />
-			</div>	
-		</div>	
-	)	
+				<div className="container">	
+					<div className="row justify-content-center">
+					<h3>Indumentary section</h3>
+					</div>
+					<div className="row justify-content-center">
+						<ItemDetail item={ item } />
+					</div>	
+				</div>	
+	)
 }
