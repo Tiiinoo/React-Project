@@ -1,6 +1,7 @@
 import React from 'react'
 import './navBar.css'
 import { CartWidget } from "../cartWidget/cartWidget"
+import { Link }from "react-router-dom"
 
 export const NavBar = () => {
 	return (
@@ -12,7 +13,7 @@ export const NavBar = () => {
 				</div> 
 				<div className="col-lg-8 offset-lg-2 offset-3 offset-sm-4 d-flex justify-content-lg-around"> 
 					<nav id="mainNav" className="navbar navbar-expand-lg navbar-light bg-light dropdown">
-						<a id="home"className="navbar-brand" href="#">Home</a>
+						<Link to="/" id="home" className="navbar-brand" >Home</Link>
 						<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span className="navbar-toggler-icon"></span>
 						</button>

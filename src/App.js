@@ -23,6 +23,9 @@ function App() {
 						<Route path="/count">
 							<ItemCount initial="0" quantity="5" />
 						</Route>
+						<Route path="/item">
+							<ItemDetailContainer />
+						</Route>
 						<Route path='*'>
 							ERROR 404!
 						</Route>
