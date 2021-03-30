@@ -16,4 +16,4 @@ Planeo gaurdar en localstorage datos del usuario como favoritos o futuras compra
 ### Datos de los productos
 Planeo consumir APYS para obtener los datos de los productos. (Al momento resta investigar sobre las mismas)
 ## Teconologías
-Por supuesto React es la tecnología principal, siendo Bootstrap la librería de C
+Por supuesto React es la tecnología principal, siendo Bootstrap la librería de CSS.
