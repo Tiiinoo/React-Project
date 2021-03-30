@@ -1,7 +1,7 @@
 import React from 'react'
 import './navBar.css'
 import { CartWidget } from "../cartWidget/cartWidget"
-import { Link }from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 
 export const NavBar = () => {
 	return (
@@ -18,12 +18,12 @@ export const NavBar = () => {
 						<span className="navbar-toggler-icon"></span>
 						</button>
 							<ul className="navbar-nav mr-auto">
-								<li className="nav-item active">
+								<NavLink to={`/category/hardware`} className="nav-item active">
 										<a id="hardwareWallets" className="nav-link" href="#">Hardaware Wallets</a>
-								</li>
-								<li className="nav-item active">
+								</NavLink>
+								<NavLink to={`/category/cards`} className="nav-item active">
 										<a id="keyCards" className="nav-link" href="#">Key Cards</a>
-								</li>
+								</NavLink>
 								<li className="nav-item active dropdown">
 									<a className="nav-link dropdown-toggle" data-toggle="dropdown"
 										href="#" role="button" aria-haspopup="true" aria-expanded="false">

@@ -20,14 +20,12 @@ function App() {
 						<Route exact path='/'>
 							<ItemListContainer greeting="cyptoUser" />
 						</Route>
-						<Route path="/count">
-							<ItemCount initial="0" quantity="5" />
+						<Route path="/category/:id">
+							<ItemListContainer greeting="cyptoUser" />
 						</Route>
-						<Route path="/item">
+						<Route path="/item/:id">
 							<ItemDetailContainer />
-						</Route>
-						<Route path='*'>
-							ERROR 404!
+							<ItemCount initial="0" quantity="5" />
 						</Route>
 					</Switch>
 				</main>

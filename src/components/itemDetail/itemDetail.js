@@ -1,15 +1,14 @@
 import React from 'react'
 import './itemDetail.css'
+import { useParams } from "react-router-dom";
 
-export default function ItemDetail({ item }) {
+export default function ItemDetail({item}) {
+	const {id} = useParams()
 	return (
 					<div className="card align-items-center col-lg-3">
-						<img className="card-img-top" src={item?.image} alt={item?.name + " image"} />
 						<div className="card-body">
-							<h4 className="card-title">{item?.name}</h4>
-							<h5 className="card-title">${item?.price}</h5>
+							<h4 className="card-title">{id}</h4>
 							<p className="card-text">{item?.description}</p>
-							<a href="#!" className="btn btn-outline-success">More information</a>
 						</div>
 					</div>				
 	);
