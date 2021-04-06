@@ -4,7 +4,6 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./icomoon/style.css";
 import { ItemListContainer } from './components/itemListContainer/itemListContainer';
-import { ItemCount } from './components/itemCount/itemCount';
 import ItemDetailContainer from './components/itemDetailContainer/itemDetailContainer';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
@@ -25,7 +24,6 @@ function App() {
 						</Route>
 						<Route path="/item/:id">
 							<ItemDetailContainer />
-							<ItemCount initial="0" quantity="5" />
 						</Route>
 					</Switch>
 				</main>

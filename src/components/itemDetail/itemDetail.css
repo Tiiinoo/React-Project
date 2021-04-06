@@ -1,3 +1,6 @@
+.card-container {
+	text-align: -webkit-center;
+}
 .card {
 	margin-bottom: 15px;
 }

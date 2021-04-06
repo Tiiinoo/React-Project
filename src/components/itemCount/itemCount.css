@@ -1,12 +1,12 @@
 #itemCountContainer{
-	margin-top: 10px;
+	margin: 10px 0px 25px 0px;
 }
 #select {
 	text-align: center;
 	font-size: 1.3rem;
 	margin-top: 15px;
 }
-#itemSelected, #stock, #yourChart {
+#stock, #yourChart {
 	text-align: center;
 }
 #items {

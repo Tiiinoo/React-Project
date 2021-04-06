@@ -9,8 +9,7 @@ export default function ItemDetailContainer() {
 	const {id} = useParams()
 	const promesa = new Promise((resolve)=>{
 		setTimeout(() => {resolve({
-			name : '',
-			description: 'This is your choice'
+			name : ''
 			})}, 2000)
 	})
 	promesa.then(res => {

@@ -18,12 +18,12 @@ export const NavBar = () => {
 						<span className="navbar-toggler-icon"></span>
 						</button>
 							<ul className="navbar-nav mr-auto">
-								<NavLink to={`/category/hardware`} className="nav-item active">
-										<a id="hardwareWallets" className="nav-link" href="#">Hardaware Wallets</a>
-								</NavLink>
-								<NavLink to={`/category/cards`} className="nav-item active">
-										<a id="keyCards" className="nav-link" href="#">Key Cards</a>
-								</NavLink>
+								<nav className="nav-item active">
+										<NavLink to={`/category/hardware`} id="hardwareWallets" className="nav-link" >Hardaware Wallets</NavLink>
+								</nav>
+								<nav className="nav-item active">
+										<NavLink to={`/category/cards`} id="keyCards" className="nav-link" href="#">Key Cards</NavLink>
+								</nav>
 								<li className="nav-item active dropdown">
 									<a className="nav-link dropdown-toggle" data-toggle="dropdown"
 										href="#" role="button" aria-haspopup="true" aria-expanded="false">
