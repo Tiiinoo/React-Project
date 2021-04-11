@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './itemDetailContainer.css'
 import ItemDetail  from '../itemDetail/itemDetail'
 import { useParams } from "react-router-dom";
@@ -11,11 +11,11 @@ export default function ItemDetailContainer() {
 		setTimeout(() => {resolve({
 			name : ''
 			})}, 2000)
-	})
+	}, [])
 	promesa.then(res => {
 		setItem(res)
 		setloaded(true);
-	});
+	},);
 	return (	<div>
 				{loaded && <div className="container">	
 					<div className="row justify-content-center">

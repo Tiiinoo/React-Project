@@ -1,17 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import './itemDetail.css'
 import { useParams, Link } from 'react-router-dom'
 import { ItemCount } from '../itemCount/itemCount'
+import { CartContext } from '../../context/cartContext'
 
 
 export default function ItemDetail({item}) {
 	const [count, setCount] = useState(null)
 	const {id} = useParams()
+	const {addItem, cart} = useContext(CartContext)
 
-	const addHandler = (e) => {
-		setCount(e)
-	} 
+	const addHandler = (count) => {
+		setCount(count)
+		console.log(count)
+	}
 
+	const finishBuy = ( count ) => {
+		addItem(item, count)
+		console.log('Se agregó ' + count + 'del item ' + item.id )
+	}
+
+	
 	return (
 					<div className="container-fluid">
 						<div className="row card-container">
@@ -26,7 +35,7 @@ export default function ItemDetail({item}) {
 									<ItemCount initial="0" quantity="5" onAdd={addHandler} />
 									:
 										<Link to="/cart" className="btn btn-success col-lg-2 offset-lg-5">
-											<input className="btn btn-success" type="button" value="Buy" />
+											<input className="btn btn-success" onClick={finishBuy} type="button" value="Buy" />
 										</Link>
 								}
 						</div>

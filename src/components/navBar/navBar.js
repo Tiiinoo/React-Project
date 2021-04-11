@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './navBar.css'
 import { CartWidget } from "../cartWidget/cartWidget"
 import { Link, NavLink } from "react-router-dom"
 
 export const NavBar = () => {
+
 	return (
 		<div>
 			<div className="row">

@@ -21,12 +21,11 @@ export const ItemListContainer = (prop) => {
 				{ id:9, image:"https://keycard.tech/images/branded-cards.png", name:"Key Card", price:25, description:"The first one", category:"cards"}
 
 			]), 2000);
-		})
+		},)
 		itemCharger.then((result) =>{
 			setItems(result)
 		})
-	})
-	// (items.filter(items => items.category == id)
+	},[])
 
 	
 	
