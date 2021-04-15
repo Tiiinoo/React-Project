@@ -7,6 +7,7 @@ import { ItemListContainer } from './components/itemListContainer/itemListContai
 import ItemDetailContainer from './components/itemDetailContainer/itemDetailContainer';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { CartContext, CartProvider } from "./context/cartContext";
+import { Cart } from './components/cart/cart'
 
 
 function App() {
@@ -32,6 +33,10 @@ function App() {
 							</Route>
 							<Route path="/item/:id">
 								<ItemDetailContainer />
+							</Route>
+							<Route path="/cart">
+								<h2>Estoy en el Cart</h2>
+								<Cart />
 							</Route>
 						</Switch>
 					</main>
