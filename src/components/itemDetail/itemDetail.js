@@ -8,16 +8,20 @@ import { CartContext } from '../../context/cartContext'
 export default function ItemDetail({item}) {
 	const [count, setCount] = useState(null)
 	const {id} = useParams()
-	const {addItem, cart} = useContext(CartContext)
+	const {addItem} = useContext(CartContext)
 
 	const addHandler = (count) => {
 		setCount(count)
 		console.log(count)
 	}
 
-	const finishBuy = ( count ) => {
+	const finishBuy = () => {
 		addItem(item, count)
-		console.log('Se agregó ' + count + 'del item ' + item.id )
+		if (count <= 1 ) {
+		console.log('Se agregó el item ' + item)
+		} else  {
+			console.log('Se agregaron ' + count + ' ' + item)
+		}
 	}
 
 	
