@@ -18,10 +18,12 @@ export default function ItemDetail({item}) {
 	const finishBuy = () => {
 		addItem(item, count)
 		if (count <= 1 ) {
-		console.log('Se agregó el item ' + count)
+		console.log('Se agregó el item ' + JSON.stringify(item))
 		} else  {
-			console.log('Se agregaron ' + count)
+			console.log('Se agregaron ' + JSON.stringify(item))
 		}
+		console.log(item)
+		return item
 	}
 
 	

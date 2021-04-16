@@ -19,10 +19,10 @@ const itemList = [
 export default function ItemDetailContainer() {
 	
 		
-	const [item, setItem] = useState(itemList)
+	const [item, setItem] = useState([])
 	const {id} = useParams()
 	useEffect (() => { const promesa = new Promise((resolve)=>{ 
-		setTimeout(() => {resolve(item.filter((item) => item.name === id))
+		setTimeout(() => {resolve(itemList)
 		}, 2000)
 	}, [])
 	promesa.then((res) => {
@@ -38,7 +38,7 @@ export default function ItemDetailContainer() {
 									<h3>{id}</h3>
 								</div>
 								<div className="row justify-content-center">
-									<ItemDetail item={item} />
+									<ItemDetail item={(item.filter((item) => item.name === id))} />
 								</div>	
 							</div>
 						</div>
