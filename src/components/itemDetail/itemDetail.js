@@ -8,7 +8,7 @@ import { CartContext } from '../../context/cartContext'
 export default function ItemDetail({item}) {
 	const [count, setCount] = useState(null)
 	const {id} = useParams()
-	const {addItem, cart} = useContext(CartContext)
+	const {addItem} = useContext(CartContext)
 
 	const addHandler = (count) => {
 		setCount(count)

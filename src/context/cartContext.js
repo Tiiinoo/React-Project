@@ -1,20 +1,39 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 export const CartContext = React.createContext([])
 
 export const CartProvider = ({children}) => {
 	const [cart, setCart] = useState([])
+	const [totalItems, setTotalItems] = useState(0)
+  const [totalPrecio, setTotalPrecio] = useState(0)
+
+    useEffect(()=>{
+        let precio= cart.reduce((acumulador,itemActual)=>{
+            const p = itemActual.quantity * itemActual.item.price
+            return acumulador + p
+        },0);
+
+        let totItems= cart.reduce((accumulador, ItemActual)=>{
+            return accumulador + ItemActual.quantity
+        },0);
+        setTotalItems(totItems);
+        setTotalPrecio(precio)
+
+		},[cart])
+		
 	
 	// agregar cierta cantidad de un ítem al carrito
-	const addItem = (newItem, newQuantity) => {
-		const { quantity = 0} = cart.find(e=> e.item.id === newItem.id) || {}
-        
-		const newCart = cart.filter(e => e.item.id !== newItem.id)
+		const addItem = (newItem, newQuantity)=>{
 
-		setCart([...newCart, 
-						{ item: newItem , quantity: quantity + newQuantity  }])
-
-		console.log(cart)
+			let itemIndex = cart.findIndex(obj => {return obj.item.id === newItem.id})
+			if(itemIndex === -1) {
+				setCart ([...cart, {item: newItem, quantity: newQuantity}]);
+			} else {
+				let modifiedCart = [...cart]
+				modifiedCart[itemIndex].quantity += newQuantity;
+				setCart (modifiedCart)
+			}
+			console.log(cart)
 	}
 	// Remover un item del cart usando su id
 	const removeItem = (itemId) => {
