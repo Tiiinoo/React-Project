@@ -33,9 +33,9 @@ export const CartProvider = ({children}) => {
 				modifiedCart[itemIndex].quantity += newQuantity;
 				setCart (modifiedCart)
 			}
-			
+			// console.log('Item' + item)
 			// setCart([...cart, [{item: newItem, quantity: newQuantity}]])
-			console.log(cart)
+			
 	}
 	// Remover un item del cart usando su id
 	const removeItem = (itemId) => {

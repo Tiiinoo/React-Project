@@ -19,9 +19,9 @@ export default function ItemDetail({item}) {
 	const finishBuy = () => {
 		addItem(item, count)
 		if (count <= 1 ) {
-		console.log('Se agregó el item ' + JSON.stringify(item))
+		console.log('Se agregó el item ' + item.name)
 		} else  {
-			console.log('Se agregaron ' + JSON.stringify(item))
+			console.log('Se agregaron ' + item.name)
 		}
 		console.log(cart)
 	}

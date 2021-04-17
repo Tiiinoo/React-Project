@@ -23,8 +23,9 @@ export default function ItemDetailContainer() {
 		}, 2000)
 	}, [])
 	promesa.then((res) => {
-		setItem(res)
-		}, 
+		let choisedItem = res.filter((item) => item.name === id);
+		setItem(choisedItem)
+		},
 	)}, 
 [id])
 	
@@ -35,7 +36,7 @@ export default function ItemDetailContainer() {
 									<h3>{id}</h3>
 								</div>
 								<div className="row justify-content-center">
-									<ItemDetail item={(item.filter((item) => item.name === id))} />
+									<ItemDetail item={item} />
 								</div>	
 							</div>
 						</div>
