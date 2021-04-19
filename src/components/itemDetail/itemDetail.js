@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import './itemDetail.css'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 import { ItemCount } from '../itemCount/itemCount'
 import { CartContext } from '../../context/cartContext'
 
@@ -8,7 +8,8 @@ import { CartContext } from '../../context/cartContext'
 export default function ItemDetail({item}) {
 	const [count, setCount] = useState(null)
 	const {id} = useParams()
-	const {addItem, cart} = useContext(CartContext)
+	const {addItem} = useContext(CartContext)
+	const history = useHistory();
 
 	const addHandler = (count) => {
 		setCount(count)
@@ -18,12 +19,7 @@ export default function ItemDetail({item}) {
 
 	const finishBuy = () => {
 		addItem(item, count)
-		if (count <= 1 ) {
-		console.log('Se agregó el item ' + item.name)
-		} else  {
-			console.log('Se agregaron ' + item.name)
-		}
-		console.log(cart)
+		history.push("/cart")
 	}
 
 	
@@ -40,9 +36,7 @@ export default function ItemDetail({item}) {
 								{ count == null ?
 									<ItemCount initial="0" quantity="5" onAdd={addHandler} />
 									:
-										<Link to="/cart" className="btn btn-success col-lg-2 offset-lg-5">
-											<input className="btn btn-success" onClick={finishBuy} type="button" value="Buy" />
-										</Link>
+											<input className="btn btn-success col-lg-2 offset-lg-5" onClick={finishBuy} type="button" value="Buy" />
 								}
 						</div>
 					</div>	

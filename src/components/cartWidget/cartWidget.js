@@ -1,16 +1,17 @@
-import React, { useContext } from 'react'
+import React, { useContext} from 'react'
 import './cartWidget.css'
 import { CartContext} from '../../context/cartContext'
+import { Link } from 'react-router-dom'
 
 export const CartWidget = () => {
 	
-	const {totalItems} = useContext(CartContext)
+	const {totItems} = useContext(CartContext)
 
 	return (<>
 
-		{totalItems ? <a id="cart" href="#">
-			<span className="icon-cart"></span>
-		</a> : null
+		{totItems ? <Link to="/cart" className="cart">
+			<span className="icon-cart"> {totItems}</span>
+		</Link>  : null
 		} </>
 	)
 }

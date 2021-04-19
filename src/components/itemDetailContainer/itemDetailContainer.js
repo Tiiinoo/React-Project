@@ -23,7 +23,7 @@ export default function ItemDetailContainer() {
 		}, 2000)
 	}, [])
 	promesa.then((res) => {
-		let choisedItem = res.filter((item) => item.name === id);
+		let choisedItem = res.find((item) => item.name === id);
 		setItem(choisedItem)
 		},
 	)}, 

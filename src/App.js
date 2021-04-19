@@ -6,7 +6,7 @@ import "./icomoon/style.css";
 import { ItemListContainer } from './components/itemListContainer/itemListContainer';
 import ItemDetailContainer from './components/itemDetailContainer/itemDetailContainer';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { CartContext, CartProvider } from "./context/cartContext";
+import { CartProvider } from "./context/cartContext";
 import { Cart } from './components/cart/cart'
 
 
@@ -16,9 +16,6 @@ function App() {
 		<>
 		<BrowserRouter>
 			<CartProvider>
-				<CartContext.Consumer>
-					{({cart})=> JSON.stringify(cart)}	
-				</CartContext.Consumer>
 				<div className="App">
 					<header className="App-header">
 						<NavBar />
@@ -35,7 +32,6 @@ function App() {
 								<ItemDetailContainer />
 							</Route>
 							<Route path="/cart">
-								<h2>Estoy en el Cart</h2>
 								<Cart />
 							</Route>
 						</Switch>

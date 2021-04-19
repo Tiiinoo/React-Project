@@ -4,23 +4,20 @@ export const CartContext = React.createContext([])
 
 export const CartProvider = ({children}) => {
 	const [cart, setCart] = useState([])
-	const [totalItems, setTotalItems] = useState(0)
-  const [totalPrecio, setTotalPrecio] = useState(0)
+	const [totItems, setTotItems] = useState(0)
+	const [price, setPrice] = useState(0)
 
-    useEffect(()=>{
-        let precio= cart.reduce((acumulador,itemActual)=>{
-            const p = itemActual.quantity * itemActual.item.price
-            return acumulador + p
-        },0);
-
-        let totItems= cart.reduce((accumulador, ItemActual)=>{
-            return accumulador + ItemActual.quantity
-        },0);
-        setTotalItems(totItems);
-        setTotalPrecio(precio)
-
-		},[cart])
-		
+	useEffect(() => {
+		let itemsQuantity = 0
+		let priceTotal = 0
+		for (let cartItem of cart) {
+			itemsQuantity += cartItem.quantity
+			priceTotal += cartItem.quantity * cartItem.item.price
+		}
+		setTotItems(itemsQuantity)
+		setPrice(priceTotal)
+	}, 
+	[cart])
 	
 	// agregar cierta cantidad de un ítem al carrito
 		const addItem = (newItem, newQuantity)=>{
@@ -52,7 +49,7 @@ export const CartProvider = ({children}) => {
 	}
 	
 	return (
-		<CartContext.Provider value={{cart, addItem, removeItem, clear, isInCart}} >
+		<CartContext.Provider value={{cart, addItem, removeItem, clear, isInCart, totItems, price}} >
 		{children}
 		</CartContext.Provider>
 	) 

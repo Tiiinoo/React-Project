@@ -1,0 +1,42 @@
+.welcomeCart {
+	padding: 10px 0px;
+	text-align: -webkit-center;
+	margin: 100px 15px;
+	border-radius: 41px;
+	background: #ffffff;
+	box-shadow:  5px 5px 10px #dbdbdb,
+							 -5px -5px 10px #ffffff;
+}
+.goHome {
+	border-radius: 0.25rem;
+}
+.itemRow {
+	margin-top: 30px;
+}
+.items {
+	padding: 10px 0px;
+	text-align: -webkit-center;
+	margin: 30px 15px;
+	border-radius: 41px;
+	background: #ffffff;
+	box-shadow:  5px 5px 10px #dbdbdb,
+							 -5px -5px 10px #ffffff;
+}
+.totalItems {
+	padding: 10px 0px;
+	text-align: -webkit-center;
+	margin: 50px 0px;
+	border-radius: 41px;
+	background: #ffffff;
+	box-shadow:  5px 5px 10px #dbdbdb,
+             	-5px -5px 10px #ffffff;
+}
+.card-img-top {
+	height: 150px !important;
+	width: 150px !important;
+}
+.bts {
+	border-radius: 0.25rem;
+	display: block;
+	margin-top: 8px;
+}
