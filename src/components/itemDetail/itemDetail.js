@@ -28,7 +28,7 @@ export default function ItemDetail({item}) {
 						<div className="row card-container">
 							<div className="card align-items-center col-lg-2 offset-lg-5">
 								<div className="card-body">
-									<h4 className="card-title">Seleccionaste {count} {id}</h4>
+									<h4 className="card-title">Seleccionaste {count} {item.name}</h4>
 								</div>
 							</div>
 						</div>	

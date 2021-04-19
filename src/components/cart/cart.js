@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import { CartContext} from '../../context/cartContext';
 import './cart.css'
 
@@ -7,6 +7,7 @@ export const Cart = () => {
 
 	const {cart, removeItem, clear, totItems, price} = useContext(CartContext)
 	const history = useHistory();
+	const {id} = useParams()
 
 	const goHome = () => {
 		history.push('/')
@@ -30,12 +31,12 @@ export const Cart = () => {
 								<div className="container">
 										<div className="row justify-content-center itemRow">
 											{cart.map(cartItem => (
-												<div key={cartItem.item.id} className="col-lg-3 items">
+												<div key={cartItem.item.name} className="col-lg-3 items">
 													<h4>{cartItem.item.name} </h4>
 													<p>Cantidad de items: {cartItem.quantity} </p>
 													<p>Precio de {cartItem.item.name}: ${cartItem.item.price}</p>
 													<img className="card-img-top" src={cartItem.item.image} />
-													<button className="btn-success bts" onClick={()=> removeItem(cartItem.item.id)}>Eliminar {cartItem.item.name}</button>
+													<button className="btn-success bts" onClick={()=> removeItem(cartItem.item.name)}>Eliminar {cartItem.item.name}</button>
 												</div>
 											)
 											)}

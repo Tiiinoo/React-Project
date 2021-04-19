@@ -22,7 +22,7 @@ export const CartProvider = ({children}) => {
 	// agregar cierta cantidad de un ítem al carrito
 		const addItem = (newItem, newQuantity)=>{
 
-			let itemIndex = cart.findIndex((e) => e.item.id === newItem.id)
+			let itemIndex = cart.findIndex((e) => e.item.name === newItem.name)
 			if(itemIndex === -1) {
 				setCart ([...cart, {item: newItem, quantity: newQuantity}]);
 			} else {
@@ -35,8 +35,8 @@ export const CartProvider = ({children}) => {
 			
 	}
 	// Remover un item del cart usando su id
-	const removeItem = (itemId) => {
-		const newCart = cart.filter(e => e.item.id !== itemId)
+	const removeItem = (itemName) => {
+		const newCart = cart.filter(e => e.item.name !== itemName)
 		setCart(newCart)
 	}
 	// Remover todos los items

@@ -21,7 +21,6 @@ export const ItemCount = ({initial, quantity, onAdd }) => {
 		<div id="itemCountContainer" className="container">
 			<div className="row"> 
 				<div className="col-lg-2 offset-lg-5 items-align-center">
-					<p id="select">{id}</p>
 					<p id="stock">Stock {stock}</p>
 				</div>
 				<div className="col-lg-2 offset-lg-5 d-flex justify-content-between">	
