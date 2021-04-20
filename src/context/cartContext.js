@@ -5,7 +5,7 @@ export const CartContext = React.createContext([])
 export const CartProvider = ({children}) => {
 	const [cart, setCart] = useState([])
 	const [totItems, setTotItems] = useState(0)
-	const [price, setPrice] = useState(0)
+	const [totPrice, setTotPrice] = useState(0)
 
 	useEffect(() => {
 		let itemsQuantity = 0
@@ -15,7 +15,7 @@ export const CartProvider = ({children}) => {
 			priceTotal += cartItem.quantity * cartItem.item.price
 		}
 		setTotItems(itemsQuantity)
-		setPrice(priceTotal)
+		setTotPrice(priceTotal)
 	}, 
 	[cart])
 	
@@ -30,13 +30,11 @@ export const CartProvider = ({children}) => {
 				modifiedCart[itemIndex].quantity += newQuantity;
 				setCart (modifiedCart)
 			}
-			// console.log('Item' + item)
-			// setCart([...cart, [{item: newItem, quantity: newQuantity}]])
 			
 	}
 	// Remover un item del cart usando su id
-	const removeItem = (itemName) => {
-		const newCart = cart.filter(e => e.item.name !== itemName)
+	const removeItem = (itemId) => {
+		const newCart = cart.filter(e => e.item.id !== itemId)
 		setCart(newCart)
 	}
 	// Remover todos los items
@@ -49,7 +47,7 @@ export const CartProvider = ({children}) => {
 	}
 	
 	return (
-		<CartContext.Provider value={{cart, addItem, removeItem, clear, isInCart, totItems, price}} >
+		<CartContext.Provider value={{cart, addItem, removeItem, clear, isInCart, totItems, totPrice}} >
 		{children}
 		</CartContext.Provider>
 	) 

@@ -14,18 +14,25 @@ export const ItemListContainer = (prop) => {
 		const itemCollection = db.collection('items')
 		const prom = itemCollection.get()
 
-		prom.then((snapshot) =>{
+		prom.then((snaptshot) =>{
 			console.log('se consultaron los datos')
-			console.log(snapshot)
+			console.log(snaptshot)
+	
+	if(snaptshot.size > 0){
+		console.log(snaptshot.docs.map(doc => doc.data()))
+
+		console.log('este es el id' + snaptshot.docs.map(doc => doc.id))
+
+
+		setItems(snaptshot.docs.map(doc => {
+			return {id:doc.id,  ...doc.data()}
 			
-			if (snapshot.size > 0) {
-				console.log(snapshot.docs.map(doc => doc.data()))
-				setItems(snapshot.docs.map(doc => {
-					return {id: doc.id, ...doc.data()}}))
-			}
-			// setItems(result)
-		})
-	},[])
+		}
+			))
+	}
+})
+
+},[id])
 
 	
 	

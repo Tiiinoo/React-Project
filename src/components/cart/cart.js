@@ -5,7 +5,7 @@ import './cart.css'
 
 export const Cart = () => {
 
-	const {cart, removeItem, clear, totItems, price} = useContext(CartContext)
+	const {cart, removeItem, clear, totItems, totPrice} = useContext(CartContext)
 	const history = useHistory();
 	const {id} = useParams()
 
@@ -13,6 +13,22 @@ export const Cart = () => {
 		history.push('/')
 	}
 
+	const createOrder = () => {
+		let order = {}
+
+		order.buyer = {name: 'Tino', phone:'1156450573', email:'tino@locochón.com'}
+		order.price = totPrice;
+		order.item = cart.map(cartItem=> {
+			const itemId = cartItem.item.id
+			const name = cartItem.item.name
+			const price = cartItem.item.price * cartItem.quantity
+
+			return {itemId, name, price}
+
+		})
+		console.log(order)
+
+	}
 	return (
 				<div>
 					{
@@ -36,7 +52,7 @@ export const Cart = () => {
 													<p>Cantidad de items: {cartItem.quantity} </p>
 													<p>Precio de {cartItem.item.name}: ${cartItem.item.price}</p>
 													<img className="card-img-top" src={cartItem.item.image} />
-													<button className="btn-success bts" onClick={()=> removeItem(cartItem.item.name)}>Eliminar {cartItem.item.name}</button>
+													<button className="btn-success bts" onClick={()=> removeItem(cartItem.item.id)}>Delete {cartItem.item.name}</button>
 												</div>
 											)
 											)}
@@ -45,8 +61,9 @@ export const Cart = () => {
 											<div className="col-lg-3 totalItems">
 												<h4>Totals</h4>
 												<p>Items quantity: {totItems}</p>
-												<p>Total price: ${price}</p> 
-												<button className="btn-outline-success bts" onClick={clear}>Borrar todos los items</button> 
+												<p>Total price: ${totPrice}</p> 
+												<button className="btn-outline-success bts" onClick={clear}>Delete all items</button> 
+												<button className="btn-outline-success bts" onClick={createOrder}>Finish your buy</button> 
 											</div>	
 										</div>		
 								</div>

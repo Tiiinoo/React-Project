@@ -1,13 +1,12 @@
 import React, { useState, useContext } from 'react'
 import './itemDetail.css'
-import { useParams, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { ItemCount } from '../itemCount/itemCount'
 import { CartContext } from '../../context/cartContext'
 
 
 export default function ItemDetail({item}) {
 	const [count, setCount] = useState(null)
-	const {id} = useParams()
 	const {addItem} = useContext(CartContext)
 	const history = useHistory();
 

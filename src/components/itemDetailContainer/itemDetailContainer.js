@@ -8,7 +8,7 @@ const getItems = (id) => {
 	const db = getFirestore()
 	const itemCollection = db.collection('items')
 	const item = itemCollection.doc(id)
-	return item.get() 
+	return item.get()
 }
 
 
@@ -22,9 +22,10 @@ export default function ItemDetailContainer() {
 		.then((res) => {
 			console.log('existe?', res.exists)
 			if(res.exists) {
-				setItem(res.data())
+				setItem({id:res.id, ...res.data()})
 			}			
 		})
+		console.log(item)
 		return;
 	 }, [id])
 	
