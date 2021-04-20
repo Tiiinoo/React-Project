@@ -2,13 +2,18 @@ import React, { useContext } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import { CartContext} from '../../context/cartContext';
 import './cart.css'
+import { getFirestore} from '../../firebase/client'
+import firebase from 'firebase/app'
+import 'firebase/firestore'
 
 export const Cart = () => {
 
 	const {cart, removeItem, clear, totItems, totPrice} = useContext(CartContext)
 	const history = useHistory();
 	const {id} = useParams()
+	const db = getFirestore()
 
+	
 	const goHome = () => {
 		history.push('/')
 	}
@@ -16,19 +21,53 @@ export const Cart = () => {
 	const createOrder = () => {
 		let order = {}
 
+		const orderCollection = db.collection('orders')
+
 		order.buyer = {name: 'Tino', phone:'1156450573', email:'tino@locochón.com'}
-		order.price = totPrice;
+		order.date = firebase.firestore.Timestamp.fromDate(new Date())
 		order.item = cart.map(cartItem=> {
 			const itemId = cartItem.item.id
 			const name = cartItem.item.name
 			const price = cartItem.item.price * cartItem.quantity
+		order.fullPrice = totPrice
 
 			return {itemId, name, price}
 
 		})
+		orderCollection.add(order)
+		.then((idDocumento)=> {
+			console.log(idDocumento.id)
+			})
+		.catch( err => {
+			console.log(err)
+		})
+		.finally(() => {
+			console.log('terminó la promesa')
+		})
+
+		const itemsToUpdate = db.collection('items').where(
+			firebase.firestore.FieldPath.documentId(), 'in', cart.map(i=> i.item.id)
+	)
+
+	const batch = db.batch();
+
+	itemsToUpdate.get()
+	.then( collection=>{
+			collection.docs.forEach(docSnapshot => {
+					batch.update(docSnapshot.ref,{
+							stock: docSnapshot.data().stock - cart.find(item => item.item.id === docSnapshot.id).quantity
+					})
+			})
+
+			batch.commit().then(res =>{
+					console.log('resultado batch:', res)
+			})
+	})
 		console.log(order)
 
 	}
+
+
 	return (
 				<div>
 					{
