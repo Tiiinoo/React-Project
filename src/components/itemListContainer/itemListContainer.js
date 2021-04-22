@@ -12,7 +12,14 @@ export const ItemListContainer = (prop) => {
 		
 		const db = getFirestore()
 		const itemCollection = db.collection('items')
-		const prom = itemCollection.get()
+		const categoryFilter = itemCollection
+		
+		if(id) {
+			categoryFilter.where('category','==', id)
+		}
+		const prom = categoryFilter.get()
+		
+		
 
 		prom.then((snaptshot) =>{
 			console.log('se consultaron los datos')

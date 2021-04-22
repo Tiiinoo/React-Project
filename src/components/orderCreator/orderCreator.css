@@ -1,0 +1,15 @@
+.form {
+	padding: 20px 0px;
+	text-align: -webkit-center;
+	margin: 30px 15px;
+	border-radius: 41px;
+	background: #ffffff;
+	box-shadow:  5px 5px 10px #dbdbdb,
+							 -5px -5px 10px #ffffff;
+}
+input {
+	margin-bottom: 15px;
+}
+.form-control {
+	width: 75% !important;
+}
