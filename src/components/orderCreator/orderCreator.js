@@ -7,7 +7,7 @@ import 'firebase/firestore'
 import { useHistory } from 'react-router-dom'
 
 export const OrderCreator = () => {
-	const {cart, totPrice} = useContext(CartContext)
+	const {cart, totPrice, clear} = useContext(CartContext)
 	const db = getFirestore()
 	const [buyerData, setBuyerData] = useState({
 		userName: '',
@@ -77,6 +77,7 @@ export const OrderCreator = () => {
 	})
 		alert('Your order was created successufully!')
 		console.log(order)
+		clear()
 		history.push('/')
 
 	}
