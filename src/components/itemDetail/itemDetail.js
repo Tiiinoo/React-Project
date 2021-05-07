@@ -12,31 +12,30 @@ export default function ItemDetail({item}) {
 
 	const addHandler = (count) => {
 		setCount(count)
-		console.log(count)
-		console.log(item)
-	}
-
-	const finishBuy = () => {
 		addItem(item, count)
 		history.push("/cart")
 	}
 
 	
 	return (
-					<div className="container-fluid">
-						<div className="row card-container">
-							<div className="card align-items-center col-lg-2 offset-lg-5">
+					<div className="container">
+						<div className="row justify-content-center">
+							<div className="card align-items-center col-lg-2">
 								<div className="card-body">
-									<h4 className="card-title">Seleccionaste {count} {item.name}</h4>
-								</div>
+									<h4 className="card-title">{item.name}</h4>
+									<h5 className="card-title">${item.price}</h5>
+									<img className="card-img-top" src={item.image} alt={item.name + " image"}  />
+								</div>								
+							</div>
+							<div className="card align-items-center col-lg-3">
+								<div className="card-body">
+									<h4>Description</h4>
+									<p>{item.full_description}</p>
+								</div>								
 							</div>
 						</div>	
 						<div className="row">
-								{ count == null ?
-									<ItemCount initial="0" quantity="5" onAdd={addHandler} />
-									:
-											<input className="btn btn-success col-lg-2 offset-lg-5" onClick={finishBuy} type="button" value="Buy" />
-								}
+							<ItemCount initial="0" quantity="5" onAdd={addHandler} />
 						</div>
 					</div>	
 	);

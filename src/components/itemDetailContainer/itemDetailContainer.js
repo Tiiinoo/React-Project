@@ -33,7 +33,7 @@ export default function ItemDetailContainer() {
 						<div>
 							<div className="container">	
 								<div className="row justify-content-center">
-									<h3>{item.name}</h3>
+									<h4 className="itemNAme">Your selection</h4>
 								</div>
 								<div className="row justify-content-center">
 									<ItemDetail item={item} />

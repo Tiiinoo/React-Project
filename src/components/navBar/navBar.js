@@ -10,7 +10,7 @@ export const NavBar = () => {
 			<div className="row">
 				<div id="titleGraph" className="col-lg-8 offset-lg-2">
 					<h1>Grettos</h1>
-					<p id="graph">Encontrá todo lo necesario para crecer en el ecosistema crypto</p>
+					<p className="graph">Find anything you need to complete your crypto environment</p>
 				</div> 
 				<div className="col-lg-8 offset-lg-2 offset-3 offset-sm-4 d-flex justify-content-lg-around"> 
 					<nav id="mainNav" className="navbar navbar-expand-lg navbar-light bg-light dropdown">

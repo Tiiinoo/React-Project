@@ -12,12 +12,15 @@ export const OrderCreator = () => {
 	const [buyerData, setBuyerData] = useState({
 		userName: '',
 		email: '',
+		repeatEmail: '',
 		phone: ''
 	})
+	const [orderID, setOrderID] = useState(null)
 	
 	const gettingData = (event) => {
 		setBuyerData({
 			...buyerData,
+			[event.target.name] : event.target.value,
 			[event.target.name] : event.target.value,
 			[event.target.name] : event.target.value,
 			[event.target.name] : event.target.value
@@ -48,7 +51,7 @@ export const OrderCreator = () => {
 		})
 		orderCollection.add(order)
 		.then((idDocumento)=> {
-			console.log(idDocumento.id)
+			setOrderID(idDocumento.id)
 			})
 		.catch( err => {
 			console.log(err)
@@ -75,50 +78,80 @@ export const OrderCreator = () => {
 					console.log('resultado batch:', res)
 			})
 	})
-		alert('Your order was created successufully!')
-		console.log(order)
 		clear()
-		history.push('/')
+	}
 
+
+	const thanks = () => {
+		history.push('/')
 	}
 
 	return (
 					<div className="container">
-						<div className="row justify-content-center">
-							<div className className="col-lg-4 form">
-								<h4>Create your order</h4>
-								<p className="formText">Name</p>
-								<input 
-									type="text" 
-									className="form-control" 
-									name="userName"
-									placeholder="What's your name?"
-									onChange={gettingData} 
-								/>
-								<p className="formText">Email</p>
-								<input 
-									type="email" 
-									className="form-control" 
-									name="email" 
-									placeholder="What's your email?"
-									onChange={gettingData} 
-								/>
-								<p className="formText">Telephone</p>
-								<input 
-									type="number" 
-									className="form-control"
-									name="phone" 
-									placeholder="What's your number?" 
-									onChange={gettingData} 
-								/>
-								<button disabled={	buyerData.phone == '' || 
-																		buyerData.userName == '' || 
-																		buyerData.email == ''} 
-												className="btn-outline-success bts" 
-												onClick={createOrder}>Create Order
-								</button>	
-							</div>							
-						</div>
+						{
+							!cart.length ?
+							<div className="row justify-content-center">
+									<div className className="col-lg-4 order">
+										<h3>Congratulations!</h3>
+										<p>You're order has been created</p>
+										<p>Your order ID is</p>
+										<p>{orderID}</p>
+										<p>(please, save it)</p>
+										<button	className="btn-outline-success bts" onClick={thanks}>Go home!</button>
+									</div>
+							</div>
+							:
+							(
+								<div className="row justify-content-center">
+									<div className className="col-lg-4 form">
+										<h4>Create your order</h4>
+										<p className="formText">Name</p>
+										<input 
+											type="text" 
+											className="form-control" 
+											name="userName"
+											placeholder="What's your name?"
+											onChange={gettingData} 
+										/>
+										<p className="formText">Telephone</p>
+										<input 
+											type="number" 
+											className="form-control"
+											name="phone" 
+											placeholder="What's your number?" 
+											onChange={gettingData} 
+										/>
+										<p className="formText">Email</p>
+										<input 
+											type="email" 
+											className="form-control" 
+											name="email" 
+											placeholder="What's your email?"
+											onChange={gettingData} 
+										/>
+										<input 
+											type="email" 
+											className="form-control" 
+											name="repeatEmail" 
+											placeholder="Please repeat it"
+											onChange={gettingData} 
+											required
+										/>
+										{ buyerData.repeatEmail !== buyerData.email ?
+											<p className="errorP">Your emails do not match</p> :
+											null
+										}
+										<button disabled={	buyerData.phone == '' || 
+																				buyerData.userName == '' || 
+																				buyerData.email == '' ||
+																				buyerData.repeatEmail !== buyerData.email } 
+														className="btn-outline-success bts" 
+														onClick={createOrder}>Create Order
+										</button>	
+									</div>							
+								</div>
+							)
+						}
 					</div>
 	)
 }

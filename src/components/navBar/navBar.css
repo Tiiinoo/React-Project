@@ -6,7 +6,7 @@ h1, h2, h3, .description {
 	text-align: -webkit-center; 
 	margin-top: 15px;
 }
-#graph {
+.graph {
   margin-top: 15px;
 }
 #mainNav {

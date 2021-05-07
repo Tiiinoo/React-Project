@@ -1,7 +1,14 @@
 .card {
-	margin-top: 15px;
+	padding: 10px 0px 0px 0px;
+	text-align: -webkit-center;
+	margin: 15px 15px;
+	border-radius: 41px;
+	background: #ffffff;
+	box-shadow:  5px 5px 10px #dbdbdb,
+							 -5px -5px 10px #ffffff;
 }
 .card-img-top {
 	height: 150px !important;
 	width: 150px !important;
+	padding-top: 10px;
 }

@@ -7,11 +7,8 @@ export const CartWidget = () => {
 	
 	const {totItems} = useContext(CartContext)
 
-	return (<>
-
-		{totItems ? <Link to="/cart" className="cart">
-			<span className="icon-cart"> {totItems}</span>
-		</Link>  : null
-		} </>
-	)
+	return 	<Link to="/cart" className="cart">
+						<span className="icon-cart"> {totItems}</span>
+					</Link>  
+	
 }
