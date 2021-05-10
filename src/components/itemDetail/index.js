@@ -20,14 +20,14 @@ export default function ItemDetail({item}) {
 	return (
 					<div className="container">
 						<div className="row justify-content-center">
-							<div className="card align-items-center col-lg-2">
+							<div className="card align-items-center col-lg-2 col-sm-4 col-6">
 								<div className="card-body">
 									<h4 className="card-title">{item.name}</h4>
 									<h5 className="card-title">${item.price}</h5>
 									<img className="card-img-top" src={item.image} alt={item.name + " image"}  />
 								</div>								
 							</div>
-							<div className="card align-items-center col-lg-3">
+							<div className="card align-items-center col-lg-3 col-sm-4 col-8">
 								<div className="card-body">
 									<h4>Description</h4>
 									<p>{item.full_description}</p>

@@ -4,7 +4,7 @@ import { ItemList } from '../itemList'
 import { useParams } from "react-router-dom";
 import {getFirestore} from '../../firebase/client'
 
-export const ItemListContainer = (prop) => {
+export const ItemListContainer = () => {
 	const [items, setItems] = useState([])
 	const {id} = useParams()
 	
@@ -34,12 +34,12 @@ export const ItemListContainer = (prop) => {
 	
 	return (
 		<div className="container">
-			<div className="row">
+			<div className="row justify-content-center">
 				<div className="col-lg-8 offset-lg-2">
-					<h3 id="itemsTitle">Hola {prop.greeting}! Chequeá nuestra lista de productos {id}.</h3>
+					<h3 id="itemsTitle">This is our {id} product list</h3>
 				</div>
 			</div>	
-			<div className="row">
+			<div className="row justify-content-center">
 			{ id == null ?
                     <ItemList items={ items } />
                         :

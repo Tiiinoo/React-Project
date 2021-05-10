@@ -91,7 +91,7 @@ export const OrderCreator = () => {
 						{
 							!cart.length ?
 							<div className="row justify-content-center">
-									<div className className="col-lg-4 order">
+									<div className className="col-lg-4 col-sm-7 col-8 order">
 										<h3>Congratulations!</h3>
 										<p>You're order has been created</p>
 										<p>Your order ID is</p>
@@ -103,7 +103,7 @@ export const OrderCreator = () => {
 							:
 							(
 								<div className="row justify-content-center">
-									<div className className="col-lg-4 form">
+									<div className className="col-lg-4 col-sm-7 col-9 form">
 										<h4>Create your order</h4>
 										<p className="formText" id="userName">Name</p>
 										<input 

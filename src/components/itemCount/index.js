@@ -18,12 +18,12 @@ export const ItemCount = ({initial, quantity, onAdd }) => {
 				<div className="col-lg-2 offset-lg-5 items-align-center">
 					<p id="stock">Stock {stock}</p>
 				</div>
-				<div className="col-lg-2 offset-lg-5 d-flex justify-content-between">	
+				<div className="col-lg-2 offset-lg-5 col-6 offset-3 col-sm-4 offset-sm-4 d-flex justify-content-between">	
 					<input id="removing" className="btn btn-outline-success" type="button" value="-" onClick={removeItem} disabled={items == 0} />
 					<p id="items">{items}</p>
 					<input id="adding" className="btn btn-outline-success" type="button" value="+" onClick={addItem} disabled={items == stock} />
 				</div>		
-				<div className="col-lg-2 offset-lg-5">
+				<div className="col-lg-2 offset-lg-5 col-6 offset-3 col-sm-4 offset-sm-4">
 					<input id="addToChart" className="btn btn-success" type="button" value="Add to chart" onClick={() => onAdd(items)} disabled={stock == 0 || items == 0} />
 				</div>	
 			</div>

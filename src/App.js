@@ -25,10 +25,10 @@ function App() {
 					<main className="App-main">
 						<Switch>
 							<Route exact path='/'>
-								<ItemListContainer greeting="cyptoUser" />
+								<ItemListContainer />
 							</Route>
 							<Route path="/category/:id">
-								<ItemListContainer greeting="cyptoUser" />
+								<ItemListContainer />
 							</Route>
 							<Route path="/item/:id">
 								<ItemDetailContainer />

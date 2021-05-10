@@ -23,7 +23,7 @@ export const Cart = () => {
 						!cart.length ?
 						<div className="container">
 							<div className="row justify-content-center">
-								<div className="welcomeCart col-lg-5">
+								<div className="welcomeCart col-lg-5 col-sm-6 col-8">
 									<h4>Welcome to your cart!</h4>
 									<p>You don´t have any items yet... But, see our products <button 
 									className='btn-outline-success goHome' onClick={goHome}>here </button><br></br>
@@ -35,7 +35,7 @@ export const Cart = () => {
 								<div className="container">
 									<h4 className="cartTitle">Welcome to your cart!</h4>
 									<div className="row justify-content-center">
-										<div className="col-lg-3 totalItems">
+										<div className="col-lg-3 col-sm-5 col-9 totalItems">
 											<h4>Totals</h4>
 											<div className="justify-content-around d-flex align-items-baseline">
 												<p className="cartDetails">Items quantity: {totItems}</p>
@@ -52,7 +52,7 @@ export const Cart = () => {
 									</div>
 									<div className="row justify-content-center itemRow">
 										{cart.map(cartItem => (
-											<div key={cartItem.item.name} className="col-lg-3 items">
+											<div key={cartItem.item.name} className="col-lg-3 col-sm-4 col-8 items">
 												<h4>{cartItem.item.name} </h4>
 												<p>Items quantity: {cartItem.quantity} </p>
 												<p>{cartItem.item.name} price: ${cartItem.item.price}</p>
