@@ -35,7 +35,7 @@ export default function ItemDetail({item}) {
 							</div>
 						</div>	
 						<div className="row">
-							<ItemCount initial="0" quantity="5" onAdd={addHandler} />
+							<ItemCount initial="0" quantity={item.stock} onAdd={addHandler} />
 						</div>
 					</div>
 	);

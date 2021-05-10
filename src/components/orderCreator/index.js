@@ -58,7 +58,6 @@ export const OrderCreator = () => {
 			console.log(err)
 		})
 		.finally(() => {
-			console.log('terminó la promesa')
 		})
 
 		const itemsToUpdate = db.collection('items').where(
@@ -76,7 +75,7 @@ export const OrderCreator = () => {
 			})
 
 			batch.commit().then(res =>{
-					console.log('resultado batch:', res)
+				console.log(res)
 			})
 	})
 		clear()
@@ -98,7 +97,7 @@ export const OrderCreator = () => {
 										<p>Your order ID is</p>
 										<p>{orderID}</p>
 										<p>(please, save it)</p>
-										<button	className="btn-outline-success bts" onClick={thanks}>Go home!</button>
+										<button	className="btn-outline-success bts" onClick={thanks} disabled={orderID == null}>Go home!</button>
 									</div>
 							</div>
 							:
@@ -106,7 +105,7 @@ export const OrderCreator = () => {
 								<div className="row justify-content-center">
 									<div className className="col-lg-4 form">
 										<h4>Create your order</h4>
-										<p className="formText">Name</p>
+										<p className="formText" id="userName">Name</p>
 										<input 
 											type="text" 
 											className="form-control" 
@@ -114,7 +113,7 @@ export const OrderCreator = () => {
 											placeholder="What's your name?"
 											onChange={gettingData} 
 										/>
-										<p className="formText">Telephone</p>
+										<p className="formText" id="phone">Telephone</p>
 										<input 
 											type="number" 
 											className="form-control"
@@ -122,11 +121,11 @@ export const OrderCreator = () => {
 											placeholder="What's your number?" 
 											onChange={gettingData} 
 										/>
-										<p className="formText">Email</p>
+										<p className="formText" id="email">Email</p>
 										<input 
 											type="email" 
 											className="form-control" 
-											name="email" 
+											name="email"
 											placeholder="What's your email?"
 											onChange={gettingData} 
 										/>

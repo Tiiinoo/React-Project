@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 export const ItemCount = ({initial, quantity, onAdd }) => {
 	const [items, setItems] = useState(initial)
 	const [stock, setStock] = useState(quantity)
-	const {id} = useParams()
 	const addItem = () => {
 		setItems(parseInt(items) +1)
 	}

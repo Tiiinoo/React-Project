@@ -21,7 +21,6 @@ export default function ItemDetailContainer() {
 	useEffect (() => {
 		getItems(id)
 		.then((res) => {
-			// console.log('existe?', res.exists)
 			if(res.exists) {
 				setItem({id:res.id, ...res.data()})
 				setloaded(true)

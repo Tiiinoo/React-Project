@@ -19,29 +19,18 @@ export const ItemListContainer = (prop) => {
 		}
 		const prom = categoryFilter.get()
 		
-		
-
 		prom.then((snaptshot) =>{
-			console.log('se consultaron los datos')
-			console.log(snaptshot)
 	
 	if(snaptshot.size > 0){
-		console.log(snaptshot.docs.map(doc => doc.data()))
-
-		console.log('este es el id' + snaptshot.docs.map(doc => doc.id))
-
 
 		setItems(snaptshot.docs.map(doc => {
 			return {id:doc.id,  ...doc.data()}
-			
 		}
 			))
 	}
 })
 
 },[id])
-
-	
 	
 	return (
 		<div className="container">
