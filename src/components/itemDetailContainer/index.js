@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './itemDetailContainer.css'
-import ItemDetail  from '../itemDetail/itemDetail'
+import ItemDetail  from '../itemDetail'
 import { useParams } from "react-router-dom";
 import {getFirestore} from '../../firebase/client'
 

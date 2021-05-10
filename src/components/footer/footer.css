@@ -6,6 +6,8 @@
   border-radius: 20px;
 	text-align: center;
 	width: 45%;
+	margin-top: 15px;
+	margin-bottom: 10px;
 }
 :root {
 	--space: 1.5em 0;

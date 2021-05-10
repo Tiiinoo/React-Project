@@ -1,14 +1,14 @@
 import './App.css';
-import { NavBar } from './components/navBar/navBar';
+import { NavBar } from './components/navBar';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./icomoon/style.css";
-import { ItemListContainer } from './components/itemListContainer/itemListContainer';
-import ItemDetailContainer from './components/itemDetailContainer/itemDetailContainer';
+import { ItemListContainer } from './components/itemListContainer';
+import ItemDetailContainer from './components/itemDetailContainer';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { CartProvider } from "./context/cartContext";
-import { Cart } from './components/cart/cart'
-import { OrderCreator } from './components/orderCreator/orderCreator'
+import { Cart } from './components/cart'
+import { OrderCreator } from './components/orderCreator'
 import { Footer } from './components/footer'
 
 

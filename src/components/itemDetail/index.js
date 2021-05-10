@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import './itemDetail.css'
 import { useHistory } from 'react-router-dom'
-import { ItemCount } from '../itemCount/itemCount'
+import { ItemCount } from '../itemCount'
 import { CartContext } from '../../context/cartContext'
 
 
