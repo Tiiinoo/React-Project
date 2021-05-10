@@ -25,16 +25,9 @@ export const NavBar = () => {
 								<nav className="nav-item active">
 										<NavLink to={`/category/cards`} id="keyCards" className="nav-link" href="#">Key Cards</NavLink>
 								</nav>
-								<li className="nav-item active dropdown">
-									<a className="nav-link dropdown-toggle" data-toggle="dropdown"
-										href="#" role="button" aria-haspopup="true" aria-expanded="false">
-										Merchandising</a>
-									<div className="dropdown-menu">
-										<a id="indumentaria" className="dropdown-item" href="#!">Indumentaria</a>
-										<a id="medias" className="dropdown-item" href="#!">Medias</a>
-										<a id="accesorios" className="dropdown-item" href="#!">Accesorios</a>
-									</div>
-								</li>
+								<nav className="nav-item active">
+										<NavLink to={`/category/merchandise`} id="merchandise" className="nav-link" href="#">Merchandise</NavLink>
+								</nav>
 							</ul>
 							<CartWidget />
 					</nav>

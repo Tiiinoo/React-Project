@@ -15,30 +15,33 @@ const getItems = (id) => {
 export default function ItemDetailContainer() {
 	
 	const [item, setItem] = useState([])
+	const [loaded, setloaded] = useState(false)
 	const {id} = useParams()
 	
 	useEffect (() => {
 		getItems(id)
 		.then((res) => {
-			console.log('existe?', res.exists)
+			// console.log('existe?', res.exists)
 			if(res.exists) {
 				setItem({id:res.id, ...res.data()})
+				setloaded(true)
 			}			
 		})
-		console.log(item)
 		return;
 	 }, [id])
 	
 	return (	
-						<div>
-							<div className="container">	
-								<div className="row justify-content-center">
-									<h4 className="itemNAme">Your selection</h4>
-								</div>
-								<div className="row justify-content-center">
-									<ItemDetail item={item} />
-								</div>	
-							</div>
+						<div> 
+							{ loaded && 
+								<div className="container">	
+									<div className="row justify-content-center">
+										<h4 className="itemNAme">Your selection</h4>
+									</div>
+									<div className="row justify-content-center">
+										<ItemDetail item={item} />
+									</div>	
+								</div> 
+							}
 						</div>
 	)
 }

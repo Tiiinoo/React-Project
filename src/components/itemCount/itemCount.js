@@ -12,10 +12,6 @@ export const ItemCount = ({initial, quantity, onAdd }) => {
 	const removeItem = () => {
 		setItems(parseInt(items) -1)
 	}
-	// const modifyStock = () => {
-	// 	setStock(stock - items)
-	// 	setItems(parseInt(initial))
-	// }
 	
 	return (
 		<div id="itemCountContainer" className="container">

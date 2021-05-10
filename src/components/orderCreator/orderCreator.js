@@ -44,9 +44,10 @@ export const OrderCreator = () => {
 			const itemId = cartItem.item.id
 			const name = cartItem.item.name
 			const price = cartItem.item.price * cartItem.quantity
+			const quantity = cartItem.quantity 
 		order.fullPrice = totPrice
 
-			return {itemId, name, price}
+			return {itemId, name, price, quantity}
 
 		})
 		orderCollection.add(order)

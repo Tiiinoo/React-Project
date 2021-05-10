@@ -9,6 +9,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { CartProvider } from "./context/cartContext";
 import { Cart } from './components/cart/cart'
 import { OrderCreator } from './components/orderCreator/orderCreator'
+import { Footer } from './components/footer'
 
 
 function App() {
@@ -40,6 +41,9 @@ function App() {
 							</Route>
 						</Switch>
 					</main>
+					<footer>
+						<Footer />
+					</footer>
 				</div>
 			</CartProvider>
 		</BrowserRouter>

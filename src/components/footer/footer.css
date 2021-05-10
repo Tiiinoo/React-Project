@@ -1,0 +1,30 @@
+.footer {
+  padding: 15px 0px 15px 0px;
+  color: #495057;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+  border-radius: 20px;
+	text-align: center;
+	width: 45%;
+}
+:root {
+	--space: 1.5em 0;
+	--space: 2em 0;
+}
+.App {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+.App-main {
+	flex: 1 0 auto;
+	padding: var(--space) var(--space) 0;
+	width: 100%;
+}
+.App-main:after {
+	content: '\00a0';
+	display: block;
+	margin-top: var(--space);
+	height: 0;
+	visibility: hidden;
+}
