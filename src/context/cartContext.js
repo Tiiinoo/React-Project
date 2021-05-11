@@ -19,7 +19,6 @@ export const CartProvider = ({children}) => {
 	}, 
 	[cart])
 	
-	// agregar cierta cantidad de un ítem al carrito
 		const addItem = (newItem, newQuantity)=>{
 
 			let itemIndex = cart.findIndex((e) => e.item.name === newItem.name)
@@ -32,22 +31,19 @@ export const CartProvider = ({children}) => {
 			}
 			
 	}
-	// Remover un item del cart usando su id
+
 	const removeItem = (itemId) => {
 		const newCart = cart.filter(e => e.item.id !== itemId)
 		setCart(newCart)
 	}
-	// Remover todos los items
+
 	const clear = () => {
 		setCart([])
 	}
-	const isInCart = (id) => {
-		const currentItem = cart.find(e=> e.item.id === id)
-		return currentItem ? true : false
-	}
+
 	
 	return (
-		<CartContext.Provider value={{cart, addItem, removeItem, clear, isInCart, totItems, totPrice}} >
+		<CartContext.Provider value={{cart, addItem, removeItem, clear, totItems, totPrice}} >
 		{children}
 		</CartContext.Provider>
 	) 

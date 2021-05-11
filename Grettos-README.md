@@ -16,7 +16,7 @@ Los datos de los productos se encuentran en la base de datos provista por Fireba
 ## Tecnologías
 Por supuesto React es la tecnología principal, siendo Bootstrap la librería de CSS.
 ## Navegabilidad
-Breve descripción de la experiencia de usuario
+Breve descripción de la experiencia de usuario:
 ### Selección del producto
 El usuario selecciona el producto desde la página principal o desde las distintas secciones clickeando sobre "More information"
 ### Elección de cantidad y lectura de descripción

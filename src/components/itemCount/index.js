@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import './itemCount.css'
-import { useParams } from "react-router-dom";
 
 export const ItemCount = ({initial, quantity, onAdd }) => {
 	const [items, setItems] = useState(initial)
