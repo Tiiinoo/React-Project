@@ -28,7 +28,6 @@ export const OrderCreator = () => {
 	}
 	const history = useHistory();
 
-
 	const createOrder = () => {
 		let order = {}
 
@@ -50,6 +49,7 @@ export const OrderCreator = () => {
 			return {itemId, name, price, quantity}
 
 		})
+		
 		orderCollection.add(order)
 		.then((idDocumento)=> {
 			setOrderID(idDocumento.id)

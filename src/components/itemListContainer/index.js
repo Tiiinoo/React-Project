@@ -35,7 +35,7 @@ export const ItemListContainer = () => {
 	return (
 		<div className="container">
 			<div className="row justify-content-center">
-				<div className="col-lg-8 offset-lg-2">
+				<div className="col-lg-8">
 					<h3 id="itemsTitle">This is our {id} product list</h3>
 				</div>
 			</div>	
