@@ -91,7 +91,7 @@ export const OrderCreator = () => {
 						{
 							!cart.length ?
 							<div className="row justify-content-center">
-									<div className className="col-lg-4 col-sm-7 col-8 order">
+									<div className="col-lg-4 col-sm-7 col-8 order">
 										<h3>Congratulations!</h3>
 										<p>You're order has been created</p>
 										<p>Your order ID is</p>
